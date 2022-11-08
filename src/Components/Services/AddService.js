@@ -5,7 +5,7 @@ const AddService = () => {
     const handleAddUser = (event) =>{
         event.preventDefault();
         console.log(service);
-        fetch('http://localhost:5000/services', {
+        fetch('https://server-side-chi.vercel.app/services', {
             method: 'POST', 
             headers: {
               'Content-Type': 'application/json',
