@@ -59,7 +59,7 @@ const AddReview = ({service}) => {
                 </form>
                 
                 </> : <>
-                <h3>Please <Link to={'/login'}><button className="btn btn-link m-0 p-0">LogIn</button></Link> For Add Review </h3>
+                <h3 className='p-2 text-xl'>Please <Link to={'/login'}><button className="btn btn-link m-0 p-0">LogIn</button></Link> For Add Review </h3>
                 
                 </>
             }

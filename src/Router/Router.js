@@ -8,6 +8,7 @@ import ServiceDetail from "../Components/Services/ServiceDetail";
 import PrivetRout from './PrivetRout';
 import Blogs from '../Components/Blogs/Blogs'
 import MyReviews from "../Components/Review/MyReviews";
+import UpadeReview from "../Components/Review/UpadeReview";
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -55,7 +56,14 @@ const router = createBrowserRouter([
                 loader:({params}) =>{
                     return fetch(`https://server-side-chi.vercel.app/services/${params.id}`)
                 }
-            }
+            },
+            {
+                path: '/reviews/:id',
+                element: <UpadeReview></UpadeReview>,
+                loader:({params}) =>{
+                    return fetch(`http://localhost:5000/reviews/${params.id}`)
+                }
+            },
         ]
 
     }

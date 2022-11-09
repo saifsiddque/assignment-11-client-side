@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Review = ({rev}) => {
+    
     return (
         <tr>
             <td>
@@ -17,8 +19,8 @@ const Review = ({rev}) => {
             </td>
             <td>{rev.message}</td>
             <td>
-                <button className="btn btn-ghost btn-xs border border-white mr-2">Edit</button>
-                <button className="btn btn-ghost btn-xs border border-white">Delete</button>
+                <Link to={`/reviews/${rev._id}`}><button  className="btn btn-ghost btn-xs border border-white mr-2">Edit</button></Link>
+                <button  className="btn btn-ghost btn-xs border border-white">Delete</button>
             </td>
         </tr>
     );
