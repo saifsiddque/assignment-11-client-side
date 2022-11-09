@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import useTitel from '../../kooks/useTitel';
 
 const Register = () => {
     const [error, seterror ] = useState('')
     const {createUser, signInWithGoogle, updateUserProfile} = useContext(AuthContext);
     console.log(createUser)
+    useTitel('Register')
     const handleSubmit = event =>{
         event.preventDefault();
         const form = event.target;

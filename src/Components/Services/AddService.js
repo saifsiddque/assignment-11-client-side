@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import useTitel from '../../kooks/useTitel';
 
 const AddService = () => {
     const [service, setService] = useState({})
+    useTitel('Add Service')
     const handleAddUser = (event) =>{
         event.preventDefault();
         console.log(service);

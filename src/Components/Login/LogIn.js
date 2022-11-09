@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import useTitel from '../../kooks/useTitel';
 
 
 const Login = () => {
@@ -8,6 +9,7 @@ const Login = () => {
     const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    useTitel('Login')
 
     const from = location.state?.from?.pathname || '/';
 

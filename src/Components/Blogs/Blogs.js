@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitel from '../../kooks/useTitel';
 
 const Blogs = () => {
+    useTitel('Blogs')
     return (
         <div>
             <div className="container p-5  ">
