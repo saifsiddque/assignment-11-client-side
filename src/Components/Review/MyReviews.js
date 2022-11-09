@@ -17,7 +17,8 @@ const MyReviews = () => {
     console.log(review)
     return (
         <div>
-           <div className="overflow-x-auto">
+            {review.length >0 ? <>
+                <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
                     <tr>
@@ -36,6 +37,8 @@ const MyReviews = () => {
                     </tbody>
                 </table>
                 </div>
+            </> : <><h2 className='text-3xl text-center py-60'>No reviews were added</h2></>}
+           
         </div>
     );
 };

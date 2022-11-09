@@ -18,7 +18,8 @@ const Reviews = ({service}) => {
             <h2 className='text-3xl border-b-4 p-4 mb-4'>
                 Reviews
             </h2>
-            {
+            {review.length >0 ? <>
+                {
                 review.map( rev => <>
                 <div className="card w-full bg-base-100 shadow-xl border border-white">
                     <div className="card-body">
@@ -34,6 +35,9 @@ const Reviews = ({service}) => {
                 </div>
                 </>)
             }
+            </> : <><h2 className='text-3xl text-center'>No reviews were added</h2></>}
+            
+            
         </div>
     );
 };
