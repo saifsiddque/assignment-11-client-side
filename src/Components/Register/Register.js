@@ -5,7 +5,7 @@ import useTitel from '../../kooks/useTitel';
 
 const Register = () => {
     const [error, seterror ] = useState('')
-    const {createUser, signInWithGoogle, updateUserProfile} = useContext(AuthContext);
+    const {createUser, loading, signInWithGoogle, updateUserProfile} = useContext(AuthContext);
     console.log(createUser)
     useTitel('Register')
     const handleSubmit = event =>{
@@ -54,6 +54,9 @@ const Register = () => {
         .catch(error => {
             console.error(error)
         })
+    }
+    if(loading){
+        return <button className="btn loading my-40 ml-28">loading</button>
     }
     return (
         <div>

@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
 import useTitel from '../../kooks/useTitel';
 import Service from '../Services/Service';
 import Reviews from './Reviews';
 
 const AddReview = ({service}) => {
+    const location = useLocation()
+
     console.log(service);
     const {user} = useContext(AuthContext);
    
@@ -59,7 +61,8 @@ const AddReview = ({service}) => {
                 </form>
                 
                 </> : <>
-                <h3 className='p-2 text-xl'>Please <Link to={'/login'}><button className="btn btn-link m-0 p-0">LogIn</button></Link> For Add Review </h3>
+                <h3 className='p-2 text-xl'>Please <Link to='/login' state={ {from: location} } replace><button className="btn btn-link m-0 p-0">LogIn</button></Link> For Add Review </h3>
+                
                 
                 </>
             }

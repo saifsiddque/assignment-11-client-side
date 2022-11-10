@@ -12,6 +12,7 @@ const UserContext = ({children}) => {
     const githubProvider = new GithubAuthProvider;
     
     const createUser = (email, password) =>{
+        setloading(true)
         return createUserWithEmailAndPassword(auth , email, password)
     }
     const signIn = (email, password) =>{

@@ -13,6 +13,8 @@ const Reviews = ({service}) => {
         .then(res => res.json())
         .then(data=> setReview(data))
     },[service?._id])
+
+    
     return (
         <div>
             <h2 className='text-3xl border-b-4 p-4 mb-4'>

@@ -6,7 +6,7 @@ import useTitel from '../../kooks/useTitel';
 
 const Login = () => {
     const [error, seterror ] = useState('')
-    const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+    const {signIn, signInWithGoogle, signInWithGithub , loading} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     useTitel('Login')
@@ -23,7 +23,27 @@ const Login = () => {
         signIn(email,password)
         .then(result =>{
             const user = result.user
-            console.log(user)
+
+            const currentUser = {
+                email: user.email,
+
+            }
+            console.log(currentUser)
+
+            // get jwt token 
+            fetch('http://localhost:5000/jwt',{
+                method: 'POST', 
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(currentUser)
+            })
+            .then(res => res.json)
+            .then(data => {
+                // console.log(data)
+            })
+            
+
             form.reset();
             navigate(from, {replace: true})
         })
@@ -46,6 +66,9 @@ const Login = () => {
         .catch(error =>{
             console.error(error)
         })
+    }
+    if(loading){
+        return <button className="btn loading my-40 ml-28">loading</button>
     }
    
     return (

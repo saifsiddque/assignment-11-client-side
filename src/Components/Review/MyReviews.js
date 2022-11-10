@@ -15,6 +15,9 @@ const MyReviews = () => {
     },[user?.email])
     useTitel('My Reviews')
     console.log(review)
+
+
+    
     return (
         <div>
             {review.length >0 ? <>
@@ -29,7 +32,7 @@ const MyReviews = () => {
                     </thead>
                     <tbody>
                         {
-                            review.map(rev=> <Review key={rev._id} rev={rev}></Review> )
+                            review.map(rev=> <Review key={rev._id}  rev={rev}></Review> )
                             // review.length
                         }
                     
