@@ -56,7 +56,7 @@ const router = createBrowserRouter([
                 loader:({params}) =>{
                     return fetch(`https://server-side-chi.vercel.app/services/${params.id}`)
                 }
-            },
+            },   
             {       
                 path: '/reviews/:id',
                 element: <UpadeReview></UpadeReview>,
