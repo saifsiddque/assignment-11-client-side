@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Review = ({rev }) => {
 
 
 
     const handleDelete = user =>{
+        const notify = () => toast("'Review Deleted Successfully.'");
         const agree = window.confirm(`Are you sure , you want to delete ${user.name}`)
         if(agree){
             // console.log('Deleting user with id:', user._id)
@@ -16,15 +19,17 @@ const Review = ({rev }) => {
             .then(data => {
                 console.log(data)
                 if(data.deletedCount > 0){
-                    alert('Review Deleted Successfully.');
                     refreshPage(true)
+                    
                 }
             })
-            }
+            }notify()
+            
     }
     function refreshPage() {
         window.location.reload(false);
       }
+      
     
     return (
         <tr>
@@ -45,6 +50,7 @@ const Review = ({rev }) => {
                 <Link to={`/reviews/${rev._id}`}><button  className="btn btn-ghost btn-xs border border-white mr-2">Edit</button></Link>
                 <button onClick={() => handleDelete(rev)} className="btn btn-ghost btn-xs border border-white">Delete</button>
             </td>
+            <ToastContainer />
         </tr>
     );
 };
