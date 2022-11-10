@@ -64,7 +64,7 @@ const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/reviews/${params.id}`)
                 }
             },       
-        ]
+        ]    
 
     }
 ]);
