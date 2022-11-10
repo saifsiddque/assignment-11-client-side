@@ -7,7 +7,7 @@ const UpadeReview = () => {
     const handleUpdateUser = (event) =>{
         event.preventDefault();
         console.log(review);
-        fetch(`http://localhost:5000/reviews/${storedReview._id}`, {
+        fetch(`https://server-side-saifsiddque.vercel.app/reviews/${storedReview._id}`, {
             method: 'PUT', 
             headers: {
               'Content-Type': 'application/json',

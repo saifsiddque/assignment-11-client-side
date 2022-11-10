@@ -31,7 +31,7 @@ const Login = () => {
             console.log(currentUser)
 
             // get jwt token 
-            fetch('http://localhost:5000/jwt',{
+            fetch('https://server-side-saifsiddque.vercel.app/jwt',{
                 method: 'POST', 
                 headers: {
                 'Content-Type': 'application/json',

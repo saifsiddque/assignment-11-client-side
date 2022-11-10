@@ -9,7 +9,7 @@ const Review = ({rev }) => {
         const agree = window.confirm(`Are you sure , you want to delete ${user.name}`)
         if(agree){
             // console.log('Deleting user with id:', user._id)
-            fetch(`http://localhost:5000/reviews/${user._id}`,{
+            fetch(`https://server-side-saifsiddque.vercel.app/reviews/${user._id}`,{
                 method: 'DELETE'
             })
             .then(res => res.json())

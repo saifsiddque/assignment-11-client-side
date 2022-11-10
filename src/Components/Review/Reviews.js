@@ -9,7 +9,7 @@ const Reviews = ({service}) => {
 
     console.log(service);
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?service=${service?._id}`)
+        fetch(`https://server-side-saifsiddque.vercel.app/reviews?service=${service?._id}`)
         .then(res => res.json())
         .then(data=> setReview(data))
     },[service?._id])
