@@ -63,7 +63,7 @@ const router = createBrowserRouter([
                 loader:({params}) =>{
                     return fetch(`http://localhost:5000/reviews/${params.id}`)
                 }
-            },   
+            },       
         ]
 
     }
